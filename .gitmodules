@@ -1,0 +1,6 @@
+[submodule "src/forgemax"]
+	path = src/forgemax
+	url = https://github.com/postrv/forgemax.git
+[submodule "src/narsil-mcp"]
+	path = src/narsil-mcp
+	url = https://github.com/postrv/narsil-mcp.git
