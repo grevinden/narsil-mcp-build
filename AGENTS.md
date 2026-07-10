@@ -1,0 +1,11 @@
+- создавать или поддерживай актуальность документации:
+  - README.md
+  - build/README.md
+  - build/narsil-mcp/README.md
+  - build/forgemax/README.md
+  - deb/README.md
+  - deb/narsil-mcp/README.md
+  - deb/forgemax/README.md
+  - src/README.md
+- используй схемы mermaid
+- данные в git submodules изменять нельзя

@@ -1,0 +1,11 @@
+Package: narsil-mcp
+Version: @VERSION@
+Section: devel
+Priority: optional
+Architecture: @ARCH@
+Maintainer: postrv <postrv@users.noreply.github.com>
+Homepage: https://github.com/postrv/narsil-mcp
+Description: A blazingly fast MCP server for code intelligence
+ Enumerates repos, data structures, algorithms, and returns
+ relevant code context. 90+ tools, tree-sitter parsing,
+ neural search, LSP integration and more.
