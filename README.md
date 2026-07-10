@@ -303,16 +303,25 @@ max_concurrent = 4
 ├── AGENTS.md                    # Правила для AI-агентов
 ├── README.md                    # Эта документация
 ├── build/
-│   └── narsil-mcp/              # Сборочная инфраструктура
-│       ├── Makefile             # Цели: release, debug, deb, test, clean
-│       ├── README.md            # Документация сборки
-│       └── target/              # Cargo target (изолирован от исходников)
+│   ├── narsil-mcp/              # Сборочная инфраструктура narsil-mcp
+│   │   ├── Makefile             # Цели: release, debug, deb, test, clean
+│   │   ├── README.md            # Документация сборки
+│   │   └── target/              # Cargo target (изолирован от исходников)
+│   └── forgemax/                # Сборочная инфраструктура forgemax
+│       ├── Makefile             # Цели: release, debug, deb, test
+│       ├── README.md
+│       └── target/
 ├── deb/
-│   └── narsil-mcp/              # Debian-пакетинг
+│   ├── narsil-mcp/              # Debian-пакетинг narsil-mcp
+│   │   └── DEBIAN/
+│   │       ├── control          # Метаданные пакета (@VERSION@, @ARCH@)
+│   │       ├── postinst         # Постустановочный скрипт
+│   │       └── postrm           # Скрипт удаления
+│   └── forgemax/                # Debian-пакетинг forgemax
 │       └── DEBIAN/
-│           ├── control          # Метаданные пакета (@VERSION@, @ARCH@)
-│           ├── postinst         # Постустановочный скрипт
-│           └── postrm           # Скрипт удаления
+│           ├── control
+│           ├── postinst
+│           └── postrm
 ├── src/
 │   ├── narsil-mcp/              # Git submodule: MCP code intelligence server
 │   └── forgemax/                # Git submodule: MCP gateway sandbox
@@ -349,7 +358,24 @@ make -C build/narsil-mcp test
 
 Результат:
 - Бинарник: `build/narsil-mcp/target/release/narsil-mcp`
-- .deb пакет: `narsil-mcp_<version>_<arch>.deb` (в `deb/`)
+- .deb пакет: `deb/narsil-mcp_<version>_<arch>.deb`
+
+### Быстрая сборка forgemax
+
+```bash
+# Полная сборка: Rust + .deb пакет
+make -C build/forgemax
+
+# Debug-сборка
+make -C build/forgemax debug
+
+# Запуск тестов
+make -C build/forgemax test
+```
+
+Результат:
+- Бинарники: `build/forgemax/target/release/{forgemax,forgemax-worker}`
+- .deb пакет: `deb/forgemax_<version>_<arch>.deb`
 
 ### .deb пакет
 

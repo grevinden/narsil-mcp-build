@@ -1,0 +1,11 @@
+Package: forgemax
+Version: @VERSION@
+Section: devel
+Priority: optional
+Architecture: @ARCH@
+Maintainer: postrv <postrv@users.noreply.github.com>
+Homepage: https://github.com/postrv/forgemax
+Description: Code Mode MCP Gateway
+ Collapses N servers x M tools into 2 MCP tools (search + execute).
+ Uses V8 sandbox (deno_core) for safe execution of LLM-generated
+ JavaScript. Supports stdio and HTTP/SSE transports.

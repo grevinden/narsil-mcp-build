@@ -11,7 +11,10 @@ build/
 │   ├── Makefile
 │   ├── README.md
 │   └── target/
-└── forgemax/            # TODO: сборка forgemax
+└── forgemax/            # Сборка forgemax (бинарник + .deb)
+    ├── Makefile
+    ├── README.md
+    └── target/
 ```
 
 ## Компоненты
@@ -19,4 +22,4 @@ build/
 | Компонент | Сборка | Результат |
 |-----------|--------|-----------|
 | `narsil-mcp` | `make -C build/narsil-mcp` | `build/narsil-mcp/target/release/narsil-mcp` |
-| `forgemax` | — | TODO |
+| `forgemax` | `make -C build/forgemax` | `build/forgemax/target/release/{forgemax,forgemax-worker}` |

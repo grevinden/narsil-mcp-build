@@ -13,7 +13,12 @@ deb/
 │   │   ├── postinst     # постустановочный скрипт
 │   │   └── postrm       # скрипт удаления
 │   └── README.md
-└── forge.max/            # TODO
+└── forgemax/
+    ├── DEBIAN/
+    │   ├── control      # метаданные пакета
+    │   ├── postinst     # постустановочный скрипт
+    │   └── postrm       # скрипт удаления
+    └── README.md
 ```
 
 ## Сборка
@@ -22,8 +27,11 @@ deb/
 # Сборка .deb пакета narsil-mcp
 make -C build/narsil-mcp deb
 
+# Сборка .deb пакета forgemax
+make -C build/forgemax deb
+
 # Результат в этом каталоге:
-ls -lh narsil-mcp_*.deb
+ls -lh *.deb
 ```
 
 ## Требования
@@ -34,5 +42,6 @@ ls -lh narsil-mcp_*.deb
 ## Установка
 
 ```bash
-sudo dpkg -i narsil-mcp_*.deb
+# Установить все .deb пакеты из этого каталога
+sudo dpkg -i *.deb
 ```
