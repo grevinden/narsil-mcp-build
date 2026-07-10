@@ -11,16 +11,18 @@
 ## Быстрый старт
 
 ```bash
-make   # полная сборка (release)
+make   # полная сборка (release + deb)
 ```
 
-Результат: `target/release/forgemax`, `target/release/forgemax-worker`
+Результат:
+- Бинарники: `target/release/forgemax`, `target/release/forgemax-worker`
+- .deb пакет: `../../deb/forgemax_<version>_<arch>.deb`
 
 ## Цели Makefile
 
 | Команда | Что делает |
 |---------|-----------|
-| `make` | Release-сборка всех crates |
+| `make` | Release-сборка + .deb пакет |
 | `make debug` | Debug-сборка |
 | `make test` | Запуск тестов |
 | `make deb` | Release + сборка `.deb` пакета |
@@ -43,7 +45,7 @@ forgemax-worker          Isolated V8 sandbox worker process (child process)
 
 ```
 /usr/bin/forgemax                        — CLI binary
-/usr/lib/forgemax/forgemax-worker        — V8 sandbox worker
+/usr/bin/forgemax-worker                — V8 sandbox worker
 /etc/forgemax/forge.toml.example         — пример конфига
 /etc/forgemax/forge.toml.example.production
 /usr/share/doc/forgemax/README.md        — документация

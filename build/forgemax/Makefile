@@ -1,5 +1,6 @@
 # forgemax build Makefile
-# Usage: make          — build everything (release)
+# Usage: make          — build everything (release + deb)
+#        make release  — release build only
 #        make debug    — debug build
 #        make deb      — build .deb package
 #        make clean    — clean artifacts
@@ -25,7 +26,7 @@ export RUSTFLAGS := -C target-cpu=native
 
 .PHONY: all release debug clean distclean test deb install-deb help
 
-all: release
+all: deb
 
 release:
 	@echo "==> Building forgemax (release)…"
@@ -75,7 +76,7 @@ deb: release
 	@mkdir -p "$(PACKAGE_DIR)/etc/forgemax"
 	# Binaries
 	@install -m 755 "$(TARGET)/release/forgemax" "$(PACKAGE_DIR)/usr/bin/forgemax"
-	@install -m 755 "$(TARGET)/release/forgemax-worker" "$(PACKAGE_DIR)/usr/lib/forgemax/forgemax-worker"
+	@install -m 755 "$(TARGET)/release/forgemax-worker" "$(PACKAGE_DIR)/usr/bin/forgemax-worker"
 	# Example config
 	@install -m 644 "$(PROJECT)/forge.toml.example" "$(PACKAGE_DIR)/etc/forgemax/forge.toml.example"
 	@install -m 644 "$(PROJECT)/forge.toml.example.production" "$(PACKAGE_DIR)/etc/forgemax/forge.toml.example.production"
@@ -130,7 +131,7 @@ distclean: clean
 
 help:
 	@echo "Usage:"
-	@echo "  make           — release build"
+	@echo "  make           — release build + .deb package"
 	@echo "  make debug     — debug build"
 	@echo "  make test      — run tests"
 	@echo "  make deb       — build .deb package (implies release)"

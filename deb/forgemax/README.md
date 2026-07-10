@@ -6,7 +6,7 @@
 
 ```
 /usr/bin/forgemax                        — CLI binary
-/usr/lib/forgemax/forgemax-worker        — V8 sandbox worker (вспомогательный процесс)
+/usr/bin/forgemax-worker                — V8 sandbox worker (вспомогательный процесс)
 /etc/forgemax/forge.toml.example         — пример конфигурации
 /etc/forgemax/forge.toml.example.production
 /usr/share/doc/forgemax/README.md        — документация
