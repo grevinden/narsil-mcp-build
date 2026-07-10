@@ -1,5 +1,7 @@
 - создавать или поддерживай актуальность документации:
   - README.md
+  - FORGEMAX.using.md
+  - NARSIL.using.md
   - build/README.md
   - build/narsil-mcp/README.md
   - build/forgemax/README.md

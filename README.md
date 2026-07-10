@@ -429,6 +429,8 @@ cargo build --release \
 
 Смотрите также:
 - [AGENTS.md](./AGENTS.md) — правила работы с проектом
+- [NARSIL.using.md](./NARSIL.using.md) — руководство по narsil-mcp
+- [FORGEMAX.using.md](./FORGEMAX.using.md) — руководство по forgemax
 - [Документация narsil-mcp](./src/narsil-mcp/README.md) — полный список инструментов, установка, конфигурация
 - [Документация forgemax](./src/forgemax/README.md) — архитектура безопасности, примеры
 - [Архитектура безопасности forgemax](./src/forgemax/ARCHITECTURE.md) — defense-in-depth, server groups, circuit breakers
