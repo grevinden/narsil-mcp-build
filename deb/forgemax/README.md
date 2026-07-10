@@ -36,6 +36,7 @@
 
 ```bash
 # Из корня проекта
+make deb
 make -C build/forgemax deb
 
 # Или напрямую

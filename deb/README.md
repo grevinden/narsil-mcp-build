@@ -24,10 +24,11 @@ deb/
 ## Сборка
 
 ```bash
-# Сборка .deb пакета narsil-mcp
-make -C build/narsil-mcp deb
+# Сборка всех .deb пакетов из корня проекта
+make deb
 
-# Сборка .deb пакета forgemax
+# Или по отдельности
+make -C build/narsil-mcp deb
 make -C build/forgemax deb
 
 # Результат в этом каталоге:

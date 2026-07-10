@@ -31,6 +31,7 @@
 
 ```bash
 # Из корня проекта
+make deb
 make -C build/narsil-mcp deb
 
 # Или напрямую

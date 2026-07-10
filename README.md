@@ -301,6 +301,7 @@ max_concurrent = 4
 ```
 .
 ├── AGENTS.md                    # Правила для AI-агентов
+├── Makefile                     # Корневой make: сборка обоих компонентов
 ├── README.md                    # Эта документация
 ├── build/
 │   ├── narsil-mcp/              # Сборочная инфраструктура narsil-mcp
@@ -335,6 +336,18 @@ git submodule update --init --recursive
 
 # Обновление до последних версий
 git submodule update --remote --merge
+```
+
+### Сборка из корня
+
+```bash
+make            # собрать всё (narsil-mcp + forgemax, release + deb)
+make narsil-mcp # только narsil-mcp
+make forgemax   # только forgemax
+make deb        # все .deb пакеты
+make install    # установить все .deb пакеты
+make test       # запустить тесты обоих компонентов
+make clean      # очистить всё
 ```
 
 ### Быстрая сборка narsil-mcp
@@ -380,14 +393,17 @@ make -C build/forgemax test
 ### .deb пакет
 
 ```bash
-# Сборка .deb пакета
+# Сборка .deb пакетов обоих компонентов из корня
+make deb
+
+# Или по отдельности
 make -C build/narsil-mcp deb
+make -C build/forgemax deb
 
 # Сборка и установка через dpkg
-make -C build/narsil-mcp install-deb
+make install
 ```
 
-Пакет создаётся в `deb/narsil-mcp_<version>_<arch>.deb`.
 Версия подхватывается из `Cargo.toml`, архитектура — из системы.
 
 ### Пошагово (без Makefile)

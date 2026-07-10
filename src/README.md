@@ -23,10 +23,13 @@ git submodule update --remote --merge
 
 ## Сборка
 
-Для сборки narsil-mcp используйте Makefile в `build/narsil-mcp/`:
-
 ```bash
-make -C build/narsil-mcp
+# Из корня проекта — оба компонента
+make
+
+# По отдельности
+make narsil-mcp
+make forgemax
 ```
 
 Подробнее: [build/README.md](../build/README.md), [deb/README.md](../deb/README.md).

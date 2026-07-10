@@ -21,5 +21,6 @@ build/
 
 | Компонент | Сборка | Результат |
 |-----------|--------|-----------|
+| оба сразу | `make` из корня | — |
 | `narsil-mcp` | `make -C build/narsil-mcp` | `build/narsil-mcp/target/release/narsil-mcp` |
 | `forgemax` | `make -C build/forgemax` | `build/forgemax/target/release/{forgemax,forgemax-worker}` |
