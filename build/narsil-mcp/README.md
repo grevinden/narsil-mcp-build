@@ -27,7 +27,7 @@ make   # полная сборка (release) + .deb пакет
 | `make release` | Только release-сборка (без deb) |
 | `make debug` | Debug-сборка: frontend → Rust → `target/debug/narsil-mcp` |
 | `make frontend` | Только фронтенд (React/Vite) |
-| `make frontend-dev` | Dev-сервер фронтенда (с hot-reload) |
+| `make frontend-dev` | Dev-сервер фронтенда (sveltekit, hot-reload) |
 | `make deb` | Release + сборка `.deb` пакета |
 | `make install-deb` | Release + сборка + установка через `dpkg -i` |
 | `make test` | Запуск тестов (Rust) |

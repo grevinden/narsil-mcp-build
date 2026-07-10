@@ -236,11 +236,7 @@ cd src/narsil-mcp
 cargo run --release -- --repos /path/to/your/repo
 ```
 
-Или через `uv run` (если настроен FastAPI entry point):
-
-```bash
-uv run fastapi dev --host=0.0.0.0 --port=8000
-```
+**Note:** narsil-mcp is a Rust-only project — no Python/FastAPI entry point.
 
 ### Подключение forgemax к narsil-mcp
 
@@ -356,14 +352,17 @@ make clean      # очистить всё
 # Полная сборка: frontend + Rust + .deb пакет
 make -C build/narsil-mcp
 
-# Только release-сборка (без deb)
+# Only release-сборка (без deb)
 make -C build/narsil-mcp release
 
 # Debug-сборка
 make -C build/narsil-mcp debug
 
-# Только фронтенд
+# Only фронтенд
 make -C build/narsil-mcp frontend
+
+# Frontend dev server (hot-reload)
+make -C build/narsil-mcp frontend-dev
 
 # Запуск тестов
 make -C build/narsil-mcp test
@@ -427,9 +426,11 @@ cargo build --release \
 
 ## Разработка
 
+**Note:** `src/narsil-mcp` и `src/forgemax` are git submodules. Code changes must be made in upstream repositories.
+
 Смотрите также:
 - [AGENTS.md](./AGENTS.md) — правила работы с проектом
-- [NARSIL.usage.md](./NARSIL.usage.md) — руководство по narsil-mcp
+- [NARSIL.usage.md](./NARSIL.usage.md) — руководство по narsil-mcp (preset tool counts)
 - [FORGEMAX.usage.md](./FORGEMAX.usage.md) — руководство по forgemax
 - [Документация narsil-mcp](./src/narsil-mcp/README.md) — полный список инструментов, установка, конфигурация
 - [Документация forgemax](./src/forgemax/README.md) — архитектура безопасности, примеры

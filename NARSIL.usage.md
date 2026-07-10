@@ -52,18 +52,25 @@ narsil-mcp --wasm
 
 ## Пресеты
 
+| Preset | Tool count | Editor | Description |
+|--------|------------|--------|-------------|
+| `minimal` | 20-30 | Zed, Vim | Fast, lightweight — essential tools only |
+| `balanced` | ~40 | VS Code, IntelliJ | Good defaults — git + LSP + security basics |
+| `full` | 70+ | Claude Desktop | All features — comprehensive analysis |
+| `security-focused` | ~30 | Security audits | Taint, OWASP/CWE, supply chain only |
+
 ```bash
-# Минимальный (только поиск)
+# Minimal - Fast, lightweight (Zed, quick edits)
 narsil-mcp --repos . --preset minimal
 
-# Сбалансированный (по умолчанию)
-narsil-mcp --repos . --preset balanced
+# Balanced - Good defaults (VS Code, IntelliJ)
+narsil-mcp --repos . --preset balanced --git --call-graph
 
-# Полный
-narsil-mcp --repos . --preset full
+# Full - All features (Claude Desktop, comprehensive analysis)
+narsil-mcp --repos . --preset full --git --call-graph
 
-# Безопасность
-narsil-mcp --repos . --preset security
+# Security-focused - Security and supply chain tools
+narsil-mcp --repos . --preset security-focused
 ```
 
 ## Конфигурация
