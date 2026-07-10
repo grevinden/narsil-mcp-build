@@ -65,9 +65,9 @@ test:
 deb: release
 	@echo "==> Building .deb package…"
 	@rm -rf "$(PACKAGE_DIR)"
+	@rm -f "$(DEB_DIR)/$(DEBNAME)"  # удалить старый deb перед сборкой
 	@mkdir -p "$(PACKAGE_DIR)/DEBIAN"
 	@mkdir -p "$(PACKAGE_DIR)/usr/bin"
-	@mkdir -p "$(PACKAGE_DIR)/usr/lib/forgemax"
 	@mkdir -p "$(PACKAGE_DIR)/usr/share/doc/forgemax"
 	@mkdir -p "$(PACKAGE_DIR)/usr/share/man/man1"
 	@mkdir -p "$(PACKAGE_DIR)/usr/share/bash-completion/completions"

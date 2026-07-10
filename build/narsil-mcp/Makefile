@@ -69,6 +69,7 @@ test:
 deb: release
 	@echo "==> Building .deb package…"
 	@rm -rf "$(PACKAGE_DIR)"
+	@rm -f "$(DEB_DIR)/$(DEBNAME)"
 	@mkdir -p "$(PACKAGE_DIR)/DEBIAN"
 	@mkdir -p "$(PACKAGE_DIR)/usr/bin"
 	@mkdir -p "$(PACKAGE_DIR)/usr/share/doc/narsil-mcp"
@@ -103,7 +104,7 @@ deb: release
 	@install -m 755 "$(MAKEFILE_DIR)../../deb/narsil-mcp/DEBIAN/postinst" "$(PACKAGE_DIR)/DEBIAN/postinst" 2>/dev/null || true
 	@install -m 755 "$(MAKEFILE_DIR)../../deb/narsil-mcp/DEBIAN/postrm" "$(PACKAGE_DIR)/DEBIAN/postrm" 2>/dev/null || true
 	# Build .deb
-		@fakeroot dpkg-deb --build "$(PACKAGE_DIR)" "$(DEB_DIR)/$(DEBNAME)" 2>&1
+	@fakeroot dpkg-deb --build "$(PACKAGE_DIR)" "$(DEB_DIR)/$(DEBNAME)" 2>&1
 	@rm -rf "$(PACKAGE_DIR)"
 	@printf "\n   Package: "; ls -lh "$(DEB_DIR)/$(DEBNAME)" | awk '{print $$5, $$NF}'
 
