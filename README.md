@@ -149,7 +149,7 @@ flowchart TB
     External -->|MCP protocol| CLI
     External -->|MCP protocol| Server
     Server --> Sandbox
-    LLM -->|execute() JS| Sandbox
+    LLM -->|"execute() JS"| Sandbox
     Sandbox -->|callTool| Downstream
     Sandbox -->|readResource| Downstream
 ```
